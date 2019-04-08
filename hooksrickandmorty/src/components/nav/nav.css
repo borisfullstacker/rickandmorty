@@ -1,0 +1,175 @@
+nav{
+    position: relative;
+    width: 100%;
+    background-color: #74c1c3;
+    height: 70px;
+    box-shadow: 1px 0px 8px black;
+}
+
+
+
+.icon{
+   display: inline-block;
+
+}
+
+
+.icon>img{
+        box-sizing: border-box;
+        border: 3px solid #fbe4e482;
+    
+}
+
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+.menu{
+    list-style: none;
+    float: right;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+}
+
+.menu>li {
+    float: left;
+    height: 100%;
+    background-color: #74c1c3;
+
+    line-height: 70px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 5px -6px 15px #4b3c67;    
+}
+
+.menu>li:hover{
+    background-color: #6a6aca;
+      color: white;
+  cursor: pointer;
+}
+
+a:hover{
+    background-color: #6a6aca;
+        color: white;
+    cursor: pointer;}
+
+
+a{
+    text-decoration: none;
+    color:black;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+
+
+.sidewbarmenu{
+    position: fixed;
+    z-index: 9991;
+    padding: 15px;
+    padding-left: 14px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    width: 70px;
+    height: 70px;
+    float: left;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 5000;
+
+    
+}
+
+.sidewbarmenu>div{
+    border:2px groove lightgreen;
+    z-index: 3000;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out}
+
+
+
+
+
+
+.sidewbarmenu>.line1 {    
+    transition-property: transform,transform-origin;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out}
+
+.line1-animated {
+  transform: rotate(-44deg) scalex(1.3);
+  transform-origin: top right;
+
+}
+
+.sidewbarmenu>.line2 {    
+    transition-property: transform , opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease-out}
+
+.line2-animated {
+  transform: rotate(90deg) scalex(1.3);
+  opacity: 0
+}
+
+.sidewbarmenu>.line3 {    
+    transition-property: transform,transform-origin;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.line3-animated {
+  transform: rotate(45deg) scalex(1.3);
+  transform-origin: bottom right;
+
+}
+
+
+
+
+.sideBarOpener{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+
+
+@media (min-width:1000px){
+   .sidewbarmenu,.sideBarOpener{
+       display: none
+   }
+
+
+}
+
+
+@media (max-width:1000px){
+  .icon{
+      float: right;
+  }
+  .menu{
+      display: none;
+    
+  }
+
+
+ } 
+
+

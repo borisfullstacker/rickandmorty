@@ -1,0 +1,218 @@
+
+.hide{
+ display: none;
+ position: absolute;
+ top: 0;
+}
+
+
+.show{
+    display: block;
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    height: 80%;
+    animation-name: modalAnimation;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    box-shadow: -1px 1px 6px #374a47;
+    background-color: rgb(0, 0, 0);
+    z-index:5000;
+}
+
+@keyframes modalAnimation{
+ 0%{opacity:0}
+ 100%{opacity:0.4}
+}
+   
+
+.modalLayerHide{
+    display: none
+}
+
+.modalLayerShow{
+    position:  fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.modalContent{
+    position: fixed;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 80%;
+    margin: 0 auto;
+    z-index: 9000;
+    animation-name: contentAnimation;
+    color: transparent;
+    background-color: transparent; 
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;  
+}
+
+@keyframes contentAnimation{
+    0%{opacity:0; visibility: hidden;}
+    100%{opacity:1; background-color: rgba(255, 255, 255);color: black;}
+}
+
+.imgAnimation{
+    animation-name: imgAnimation;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;  
+}
+
+
+@keyframes imgAnimation{
+    0%{visibility: hidden;}
+    100%{visibility: visible}
+}
+
+.arrowLeft{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    border-top: 20px solid transparent;    
+    border-left: 20px solid transparent;
+    border-right:20px solid rgba(0, 0, 0,0.7);
+    border-bottom: 20px solid transparent;
+    animation-name: arrowAnimationLeft;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    transition: border-right;
+    transition-timing-function: ease-in;
+    transition-duration: 0.1s
+}
+
+.arrowLeft:active{
+    border-right: 20px solid lightgreen;
+
+}
+
+@keyframes arrowAnimationLeft{
+    0%{visibility: hidden;}
+    100%{visibility: visible}
+}
+
+.arrowRight{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    border-top: 20px solid transparent;    
+    border-left: 20px solid rgba(0, 0, 0,0.7);
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    animation-name: arrowAnimationLeft;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+    transition: border-left;
+    transition-timing-function: ease-in;
+    transition-duration: 0.1s
+
+}
+
+.arrowRight:active{
+    border-left: 20px solid lightgreen;
+
+}
+
+.modalHead{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.modalBody{
+   width: 80%;
+   height: 80%;
+   margin: 0 auto;
+
+}
+
+.modalBody>img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  box-shadow: 1px 2px 10px #1b1616a3;
+
+
+}
+
+#orangeBox {
+    background: #f90;
+    color: #fff;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    float: right;
+    animation-name: xAnimation;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+    visibility: hidden;
+    line-height: 40px;
+    border-radius: 2px;
+    margin: 4px;
+    box-shadow: 0 1px 4px #0000009c;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    transition-property: box-shadow , border,background-color,color;
+    transition-duration: 0.4s , 0.2s;
+    transition-delay: 0s , 0.4s;
+    transition-timing-function: ease-in,ease-out;
+  }
+
+  #orangeBox:hover{
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.612);
+      border: 1px solid rgba(0, 0, 0,0.3);
+      background-color: lightgreen;
+      color: #f90;
+  }
+
+
+
+  @keyframes xAnimation{
+    0%{visibility: hidden;}
+    100%{visibility: visible}
+}
+
+
+@media(max-height: 350px){
+    .modalBody{height: 71%};
+}
+
+@media(max-width:1025px){
+    .modalContent{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;}
+    .show{
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
